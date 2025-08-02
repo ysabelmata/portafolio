@@ -33,7 +33,7 @@ Formato original: **JSON**
 - `Scikit-learn` para preprocesamiento y futuros modelos
 
 
-## ::bar_chart: Análisis Exploratorio (EDA)
+## :bar_chart: Análisis Exploratorio (EDA)
 
 El análisis incluye:
 
