@@ -43,7 +43,7 @@ El análisis incluye:
 - Impacto del número de servicios contratados
 - Matriz de correlación entre variables numéricas
 
-![Matriz de correlación](./matriz_correlacion.png)
+[Matriz de correlación](./matriz_correlacion.png)
 
 
 ## :brain: Hallazgos Clave
