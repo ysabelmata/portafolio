@@ -1,6 +1,6 @@
-# Proyecto Telecom X - Parte 2: Análisis y Predicción de Churn
+# :chart_with_downwards_trend: Proyecto Telecom X - Parte 2: Análisis y Predicción de Churn
 
-## Propósito del proyecto
+## :pushpin: Propósito del proyecto
 
 El objetivo principal de este proyecto es **predecir el churn (cancelación) de clientes** de la empresa ficticia Telecom X, utilizando datos históricos de clientes y sus características. Se busca identificar patrones y variables clave que influyen en la cancelación para diseñar estrategias de retención efectivas.
 
@@ -118,7 +118,13 @@ df = pd.read_csv('data/telecomx_clean.csv')
 
 ---
 
-## Conclusión
+## 🧠 Conclusión
 
 El proyecto identifica las variables más relevantes para el churn y propone estrategias de retención basadas en datos, permitiendo decisiones informadas para reducir cancelaciones en Telecom X.
+
+## :woman: Autor
+
+**Ysabel Mata**  
+:link: [GitHub](https://github.com/ysabelmata) • [LinkedIn](https://www.linkedin.com/in/ysabelmata/)
+
 
