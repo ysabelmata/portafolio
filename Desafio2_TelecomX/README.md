@@ -12,10 +12,10 @@ El objetivo principal de este proyecto es **predecir el churn (cancelación) de 
 TelecomX_Parte2/
 │
 ├── Dataset/
-│   └── telecomx_clean.csv       # Datos tratados y limpios
+│   └── telecomx_clean.csv       
 │
 ├── notebooks/
-│   └── TelecomX_Parte2.ipynb    # Cuaderno principal con análisis, modelado y visualizaciones
+│   └── TelecomX_Parte2.ipynb 
 │
 ├── visuals/      
 │   ├── GastoTotalvsCancelación.png
