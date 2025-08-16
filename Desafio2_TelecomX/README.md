@@ -20,8 +20,8 @@ TelecomX_Parte2/
 ├── visuals/      
 │   ├── GastoTotalvsCancelación.png
 │   ├── Matrizdecorrelacion.png
-│   ├── TiempodecontratovsGastoTotalporChurn.png
-│   ├── TiempocontratovsGastos.png
+│   ├── TiempodecontratovsCancelación.png
+│   ├── TiempocontratovsGastosporChurn.png
 │   ├── Top10_Coefficients_LogisticRegression.png
 │   └── Top10_Importance_RandomForest.png
 │
