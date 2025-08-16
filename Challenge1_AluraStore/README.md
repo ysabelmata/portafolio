@@ -1,126 +1,103 @@
-# :chart_with_downwards_trend: Proyecto Telecom X - Parte 2: Análisis y Predicción de Churn
+# 🛍️ Análisis de Ventas - Alura Store
 
-## :pushpin: Propósito del proyecto
+## 📌 Descripción
+Este proyecto corresponde al **Challenge de Data Science (Alura LATAM)**, donde se analizan los datos de ventas de **4 tiendas** con el objetivo de determinar cuál de ellas debería vender el Sr. Juan para poder invertir en un nuevo emprendimiento.  
 
-El objetivo principal de este proyecto es **predecir el churn (cancelación) de clientes** de la empresa ficticia Telecom X, utilizando datos históricos de clientes y sus características. Se busca identificar patrones y variables clave que influyen en la cancelación para diseñar estrategias de retención efectivas.
+El análisis incluye:  
+- Facturación total por tienda.  
+- Ventas por categoría de producto.  
+- Calificación promedio de clientes.  
+- Productos más vendidos en cada tienda.  
+- Costo de envío promedio por tienda.
 
 ---
 
-## Estructura del proyecto
+## 📂 Estructura del proyecto
+
 
 ```
-TelecomX_Parte2/
+Challenge1_AluraStore/
 │
 ├── Dataset/
-│   └── telecomx_clean.csv       
+│   ├── tienda1.csv
+│   ├── tienda2.csv
+│   ├── tienda3.csv
+│   ├── tienda4.csv    
 │
-├── notebooks/
-│   └── TelecomX_Parte2.ipynb 
-│
-├── visuals/      
-│   ├── GastoTotalvsCancelación.png
-│   ├── Matrizdecorrelacion.png
-│   ├── TiempodecontratovsCancelación.png
-│   ├── TiempodecontratovsGastosTotalporChurn.png
-│   ├── Top10_Coefficients_LogisticRegression.png
-│   └── Top10_Importance_RandomForest.png
+├── Notebook/
+│   └── AluraStoreLatam.ipynb 
 │
 └── README.md
 ```
 
----
 
-## Preparación de los datos
+## 📊 Hallazgos principales
 
-### 1. Clasificación de variables
+### 🔹 Facturación total (Ingresos)
+- **Tienda 1:** 1,212,258,000  
+- **Tienda 2:** 1,175,829,000  
+- **Tienda 3:** 1,156,536,000  
+- **Tienda 4:** 1,093,693,000  
 
-- **Categóricas:** `customer.gender`, `customer.Partner`, `customer.Dependents`, `phone.PhoneService`, `phone.MultipleLines`, `internet.InternetService`, `internet.OnlineSecurity`, `internet.OnlineBackup`, `internet.DeviceProtection`, `internet.TechSupport`, `internet.StreamingTV`, `internet.StreamingMovies`, `account.Contract`, `account.PaperlessBilling`, `account.PaymentMethod`.
-
-- **Numéricas:** `customer.tenure`, `account.Charges.Monthly`, `account.Charges.Total`, `customer.SeniorCitizen`.
-
-### 2. Tratamiento de datos
-
-- **Imputación de valores faltantes:** columna `account.Charges.Total` imputada con la media.
-- **Codificación de variables categóricas:** One-Hot Encoding para variables categóricas.
-- **Normalización / Estandarización:** aplicada solo a variables numéricas para modelos sensibles a la escala (Regresión Logística y KNN).
-
-### 3. Separación de datos
-
-- Dataset dividido en entrenamiento (70%) y prueba (30%).
+➡️ **Conclusión:** La **Tienda 4** fue la de menor facturación.
 
 ---
 
-## Modelización
+### 🔹 Categorías más vendidas
+Ejemplo de distribución por tienda:  
 
-### Modelos utilizados
-
-1. **Regresión Logística:** sensible a la escala, permite interpretar coeficientes de cada variable.
-2. **Random Forest:** modelo basado en árboles, robusto y no sensible a la escala, evalúa la importancia de cada variable.
-
-### Justificación
-
-- Regresión Logística para interpretar relaciones lineales.
-- Random Forest para alto desempeño y detección de interacciones no lineales.
+- **Tienda 1:** Electrónicos (448), Electrodomésticos (312), Deportes y diversión (284).  
+- **Tienda 2:** Instrumentos musicales y electrónicos destacan.  
+- **Tienda 3:** Predominio de muebles y artículos para el hogar.  
+- **Tienda 4:** Alta venta en productos del hogar y artículos variados.  
 
 ---
 
-## Exploración de datos (EDA)
+### 🔹 Calificación promedio de clientes
+- **Tienda 1:** 3.98  
+- **Tienda 2:** 4.04  
+- **Tienda 3:** 4.05  
+- **Tienda 4:** 4.00  
 
-- **Matriz de correlación:** relaciones entre variables numéricas y `Churn_Yes`.
-- **Boxplots:** `customer.tenure` y `account.Charges.Total` vs Churn.
-- **Scatter plot:** `tenure` vs `account.Charges.Total` según Churn.
-- **Top 10 variables:** coeficientes de Regresión Logística y Random Forest.
-
-**Insights:**
-
-- Mayor antigüedad → menor churn.
-- Gasto total alto → mayor probabilidad de churn.
-- Fibra óptica y streaming → riesgo de churn más alto.
-- Métodos de pago digitales y facturación sin papel → leve aumento en probabilidad de churn.
+➡️ **Conclusión:** La mejor evaluada fue la **Tienda 3**, y la peor evaluada la **Tienda 1**.
 
 ---
 
-## Resultados de los modelos
-
-- **Regresión Logística:** Exactitud 77,5%, F1-score 78,1%.
-- **Random Forest:** Exactitud 90,5%, F1-score 90,7%, Recall 95%.
-- **Conclusión:** Random Forest es más confiable para detectar clientes con riesgo de churn.
-
----
-
-## Estrategias de retención
-
-1. Clientes con alto gasto total → descuentos y beneficios personalizados.
-2. Clientes con servicios de fibra óptica y streaming → promociones y contenido exclusivo.
-3. Clientes nuevos o con baja antigüedad → programas de bienvenida y seguimiento.
-4. Métodos de pago digitales → mejorar experiencia y recordatorios.
+### 🔹 Productos más vendidos
+- **Tienda 1:** TV LED UHD 4K (60), Microondas (60), Armario (60).  
+- **Tienda 2:** Libro *Iniciando en programación* (65), Microondas (62), Batería (61).  
+- **Tienda 3:** Kit de bancas (57), Cama king (56), Mesa de comedor (56).  
+- **Tienda 4:** Cama box (62), Cubertería (59), Cama king (56), *Dashboards con Power BI* (56).  
 
 ---
 
-## Instrucciones para ejecutar el cuaderno
+### 🔹 Costo de envío promedio por tienda
+- **Tienda 1:** 26,018.61  
+- **Tienda 2:** 25,216.24  
+- **Tienda 3:** 24,805.68  
+- **Tienda 4:** 23,459.46  
 
-1. Clonar o descargar el proyecto.
-2. Instalar librerías:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
-3. Cargar datos tratados:
-
-```python
-import pandas as pd
-df = pd.read_csv('data/telecomx_clean.csv')
-```
-
-4. Ejecutar `notebooks/TelecomX_Parte2.ipynb` paso a paso.
-5. Los gráficos se generan y guardan en `visuals/`.
+➡️ **Observación:** La Tienda 4 tiene el **costo de envío más bajo**, lo que podría ser positivo, pero no compensa su menor facturación y desempeño general.
 
 ---
 
-## 🧠 Conclusión
+## ✅ Conclusión final
+Tras evaluar las métricas clave:  
 
-El proyecto identifica las variables más relevantes para el churn y propone estrategias de retención basadas en datos, permitiendo decisiones informadas para reducir cancelaciones en Telecom X.
+- La **Tienda 4** presenta la **menor facturación total** y calificación promedio baja.  
+- Aunque tiene un costo de envío más económico, su rendimiento global es menor frente a las otras tiendas.  
+
+📌 **Recomendación:** El Sr. Juan debería considerar **vender la Tienda 4**, para concentrar recursos en las tiendas con mejor desempeño y maximizar el potencial del nuevo emprendimiento.
+
+---
+
+## ⚙️ Tecnologías utilizadas
+- Python (Pandas, Matplotlib, Seaborn)  
+- Jupyter Notebook / Google Colab  
+- GitHub para control de versiones  
+
+---
+
 
 ## :woman: Autor
 
