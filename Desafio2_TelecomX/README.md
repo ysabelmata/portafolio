@@ -11,17 +11,17 @@ El objetivo principal de este proyecto es **predecir el churn (cancelación) de 
 ```
 TelecomX_Parte2/
 │
-├── data/
+├── Dataset/
 │   └── telecomx_clean.csv       # Datos tratados y limpios
 │
 ├── notebooks/
 │   └── TelecomX_Parte2.ipynb    # Cuaderno principal con análisis, modelado y visualizaciones
 │
-├── visuals/
-│   ├── Matriz_Correlacion.png
-│   ├── Boxplot_Tenure_Churn.png
-│   ├── Boxplot_TotalCharges_Churn.png
-│   ├── Scatter_Tenure_TotalCharges_Churn.png
+├── visuals/      
+│   ├── GastoTotalvsCancelación.png
+│   ├── Matrizdecorrelacion.png
+│   ├── TiempodecontratovsGastoTotalporChurn.png
+│   ├── TiempocontratovsGastos.png
 │   ├── Top10_Coefficients_LogisticRegression.png
 │   └── Top10_Importance_RandomForest.png
 │
